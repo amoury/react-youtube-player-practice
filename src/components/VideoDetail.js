@@ -12,7 +12,7 @@ const VideoDetail = ({video}) => {
         <iframe className="embed-responsive-item" src={url}></iframe>
       </div>
       <div className="details">
-        <div><h1>{video.snippet.title}</h1></div> 
+        <div style={{marginTop: "50px"}}><h1>{video.snippet.title}</h1></div> 
         <div>{video.snippet.description}</div>
       </div>
     </div>

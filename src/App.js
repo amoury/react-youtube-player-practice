@@ -43,7 +43,7 @@ class App extends Component {
     return (
       <div className="App">
         {console.log('Now rendering...')}
-        <SearchBar 
+        <SearchBar
           onSearchTermChange = { term => this.videoSearch(term)} />
         <div className="row">
           <VideoDetail video={this.state.selectedVideo} />
