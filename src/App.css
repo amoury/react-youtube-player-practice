@@ -1,10 +1,6 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  margin-top: 5%;
 }
 
 .App-header {
@@ -18,11 +14,9 @@
   font-size: 1.5em;
 }
 
-.App-intro {
-  font-size: large;
-}
+@media (max-width: 768px) {
+  .playlist {
+    margin-top: 100px;
+  }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
