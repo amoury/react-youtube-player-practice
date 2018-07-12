@@ -6,15 +6,30 @@ class SearchBar extends Component {
     term: 'reactjs'
   };
 
-  inputChangeHandler = (term) => {
-    this.setState({term});
-    this.props.onSearchTermChange(term);
-  };
+  keyPressHandler = (event) => {
+    var code = event.keyCode || event.which;
+    if (code === 13) {
+      let term = event.target.value;
+      this.setState({ term });
+      this.props.onSearchTermChange(term);
+    }
+  }
+
+  // inputChangeHandler = (term) => {
+  //   this.setState({term});
+  //   this.props.onSearchTermChange(term);
+  // };
 
   render () {
     return (
-      <div className="form-group col-md-8 offset-md-2">
-        <input className="form-control" type="text" onChange={event => this.inputChangeHandler(event.target.value)} value={this.state.term}/>
+      <div className="input-group mb-3 col-md-8 offset-md-2">
+        <input 
+          className="form-control" 
+          type="text" 
+          onKeyPress={event => this.keyPressHandler(event)} />
+        <div className="input-group-append">
+          <span className="input-group-text" id="basic-addon2">Press Enter to search...</span>
+        </div>
       </div>
     );
   }
